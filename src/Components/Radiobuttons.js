@@ -27,11 +27,22 @@ const RadioButtons = ({ state, setState, ThemesData, setOpen, setThemeSettings }
                     <div className='radiobtn-wrapper' key={index}>
                         <label className='radiobtn-container'>
                             {item.title}
-                            <input onChange={handleChange} type='radio' name='theme' value={item.id} checked={get(state, "theme.id") === item.id} />
+                            <input
+                                onChange={handleChange}
+                                type='radio'
+                                name='theme'
+                                value={item.id}
+                                checked={get(state, "theme.id") === item.id}
+                            />
                             <span className='checkmark'></span>
                         </label>
                         <Tooltip text='Preview Theme'>
-                            <FontAwesomeIcon onClick={() => handlePreview(item.title)} icon={faEye} color='black' size='sm' />
+                            <FontAwesomeIcon
+                                onClick={() => handlePreview(item.title)}
+                                icon={faEye}
+                                color='black'
+                                size='sm'
+                            />
                         </Tooltip>
                     </div>
                 );

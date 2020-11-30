@@ -7,20 +7,7 @@ const TextArea = ({ state, setState }) => {
         setState((prevState) => ({ ...prevState, text: event.target.value }));
     };
 
-    return (
-        <textarea
-            spellCheck={true}
-            className='form-input'
-            placeholder='Enter Message'
-            id='textArea'
-            label='Please
-      provide message'
-            rows={4}
-            cols={10}
-            value={state.text}
-            onChange={handleChange}
-        />
-    );
+    return <textarea spellCheck={true} className='form-input' placeholder='Enter Message' id='textArea' label='Please provide message' rows={4} cols={10} value={state.text} onChange={handleChange} />;
 };
 
 export default TextArea;

@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import get from "lodash/get";
+// THEMES ARE DYNAMIC, FOR NOW JUST AS A POC I'VE TAKEN CLASS NAMES, AND LABEL TITLES
+// BUT FOR EXPANDING WE CAN TAKE ANY KEYS IN JSON/FROM API AND ADJUST OUR
 import ThemesData from "../config.json";
 import { useHistory } from "react-router-dom";
 import { AppContext } from "../Components/Context/index";
@@ -14,8 +16,10 @@ const InputPage = ({}) => {
     const [themeSettings, setThemeSettings] = useState();
     const history = useHistory();
     const appContext = useContext(AppContext);
+    // MAINTAIN USER'S SELECTION IN APP CONTEXT
     const { contextState, setContextState } = appContext;
 
+    // HANDLE FORM SUBMIT
     const handleSubmit = (e) => {
         setSubmitted(true);
         e.preventDefault();
@@ -35,7 +39,9 @@ const InputPage = ({}) => {
                 <div className='form-container datepicker'>
                     <label htmlFor='datepicker'>Please provide date</label>
                     <DateComponent className='input-margin' state={contextState} setState={setContextState} />
-                    {submitted && !get(contextState, "displayDate") && <span className='help-block'>* Date can't be empty</span>}
+                    {submitted && !get(contextState, "displayDate") && (
+                        <span className='help-block'>* Date can't be empty</span>
+                    )}
                 </div>
                 <div className='form-container'>
                     <label htmlFor='textArea'>Please provide message</label>
@@ -44,7 +50,14 @@ const InputPage = ({}) => {
                 </div>
                 <div className='form-container'>
                     <label>Choose Theme</label>
-                    <RadioButtons className='input-margin' state={contextState} setState={setContextState} ThemesData={ThemesData} setThemeSettings={setThemeSettings} setOpen={setOpen} />
+                    <RadioButtons
+                        className='input-margin'
+                        state={contextState}
+                        setState={setContextState}
+                        ThemesData={ThemesData}
+                        setThemeSettings={setThemeSettings}
+                        setOpen={setOpen}
+                    />
                     {submitted && !contextState.theme && <span className='help-block'>* Please select a theme</span>}
                 </div>
                 <button className='output-btn desk-only' onClick={handleSubmit}>

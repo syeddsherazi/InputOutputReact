@@ -11,6 +11,7 @@ const OutputPage = (props) => {
     const { contextState, setContextState } = appContext;
     const history = useHistory();
 
+    // IF NO CONTEXT, ROUTE TO INPUT PAGE
     if (!contextState.theme) {
         history.push({
             pathname: "/",
