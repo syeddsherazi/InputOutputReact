@@ -17,11 +17,11 @@ const DialogBox = ({ open, setOpen, themeSettings }) => {
                 </div>
 
                 <Tooltip text='Desktop View'>
-                    <FontAwesomeIcon className='device-icon' onClick={() => setPreview("desktop")} icon={faDesktop} color='black' size='1x' />
+                    <FontAwesomeIcon className='device-icon' onClick={() => setPreview("desktop")} icon={faDesktop} color={preview === "desktop" ? "#47bfc0" : "black"} size='1x' />
                 </Tooltip>
 
                 <Tooltip text='Mobile View'>
-                    <FontAwesomeIcon className='device-icon' onClick={() => setPreview("mobile")} icon={faMobileAlt} color='black' size='1x' />
+                    <FontAwesomeIcon className='device-icon' onClick={() => setPreview("mobile")} icon={faMobileAlt} color={preview === "mobile" ? "#47bfc0" : "black"} size='1x' />
                 </Tooltip>
             </div>
             <Preview themeSettings={themeSettings} preview={preview} />

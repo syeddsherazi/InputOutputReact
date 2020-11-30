@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DateComponent = ({ state, setState }) => {
-    const [startDate, setStartDate] = useState(null);
-
     const handleDateChange = (date) => {
         const formattedDate = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
 
@@ -21,7 +19,6 @@ const DateComponent = ({ state, setState }) => {
             placeholderText='Select date'
             selected={state.date}
             onChange={(date) => {
-                setStartDate(date);
                 handleDateChange(date);
             }}
         />

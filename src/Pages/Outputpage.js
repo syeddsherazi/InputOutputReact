@@ -38,7 +38,7 @@ const OutputPage = (props) => {
                     <h3 className='item-header'>{contextState.theme.messageTitle}</h3>
                     <p className='item-text'>{contextState.text}</p>
                 </div>
-                <a href='https://github.com/yyx990803' className='github-link'>
+                <a href='https://github.com/syeddsherazi/InputOutputReact' className='github-link'>
                     <button>
                         <span>Check Github</span>
                     </button>
