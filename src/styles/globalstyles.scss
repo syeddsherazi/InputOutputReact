@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
+
+$xsmall-limit: 728px;
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $xsmall-limit) {
+      @content;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 728px) {
+  .desk-only {
+    display: none !important;
+  }
+}
+
+@media (min-width: 728px) {
+  .mobile-only {
+    display: none !important;
+  }
+}
+
+.inputpage-container {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #e7e9ef;
+  padding: 20px;
+  box-shadow: 0 3px 6px 0 rgba(85, 85, 85, 0.15);
+  margin-top: 30px;
+  border-radius: 10px;
+  max-width: 650px;
+  margin: 30px auto;
+
+  @include respond-to(mobile) {
+    border: none;
+    box-shadow: none;
+    padding: 0px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.inputpage-title {
+  margin-bottom: 20px;
+  margin-top: 0px;
+}
+
+.Dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 12rem;
+  overflow: hidden;
+  .device-icon {
+    margin: 0.3rem 0.5rem;
+    cursor: pointer;
+  }
+  .close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+
+.output-btn {
+  background: #47bfc0;
+  border-radius: 6px;
+  border: none;
+  padding: 0.75em 2.3em;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  @include respond-to(mobile) {
+    width: 100%;
+  }
+  &:hover {
+    background-color: #6dcccd;
+  }
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  .text {
+    font-size: 11px;
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 4px 0;
+    margin-left: 5px;
+    position: absolute;
+    z-index: 1;
+  }
+  &:hover {
+    .text {
+      visibility: visible;
+    }
+  }
+}
+
+.preview-container {
+  display: flex;
+  justify-content: center;
+}
+
+.view-container {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  height: 250px;
+  width: 180px;
+  color: #001;
+  border: 1px solid #ccc;
+  margin-bottom: 3rem;
+  &.desktop {
+    width: 350px;
+  }
+}
+
+.sticky-btn {
+  position: absolute;
+  bottom: 0;
+  padding: 3px !important;
+  font-size: 12px !important;
+}
+
+.view-container-btn {
+  padding: 3px !important;
+  font-size: 12px !important;
+}
+
+.view-container-item {
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  .form-input {
+    min-width: 100%;
+    padding: 12px 20px;
+    margin: 0px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    &:focus {
+      border: 1px solid #2a87d0;
+    }
+  }
+
+  .radiobtn-wrapper {
+    display: flex;
+    align-items: center;
+    .radiobtn-container {
+      display: block;
+      position: relative;
+      padding-left: 35px;
+      margin: 12px 0px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 400;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .radiobtn-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+    .tooltip {
+      margin: 0px 5px;
+    }
+  }
+
+  .react-datepicker-wrapper {
+    .react-datepicker__input-container {
+      input {
+        width: 100% !important;
+      }
+      input::placeholder {
+        font-family: "Roboto", sans-serif !important;
+      }
+    }
+  }
+
+  .react-datepicker__tab-loop {
+    .react-datepicker-popper {
+      width: 100% !important;
+      .react-datepicker {
+        font-family: "Roboto", sans-serif !important;
+        width: 100% !important;
+        .react-datepicker__month-container {
+          width: 100% !important;
+          .react-datepicker__day,
+          .react-datepicker__day-name {
+            width: 4rem !important;
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    max-width: 100%;
+    font-family: "Roboto", sans-serif;
+    &::placeholder {
+      font-family: "Roboto", sans-serif;
+    }
+  }
+
+  &.datepicker {
+    position: relative;
+  }
+}
+
+.outputpage-wrapper {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  .outputpage-header {
+    margin-top: 50px;
+    font-size: 24px;
+    @include respond-to(mobile) {
+      font-size: 18px;
+      margin-top: 65px;
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  }
+  .outputpage-container {
+    text-align: center;
+    max-width: 720px;
+    margin: 30px 0px;
+    @include respond-to(mobile) {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+    .item {
+      margin: 2rem 0;
+      .item-header {
+        font-size: 18px;
+        margin-bottom: 5px;
+      }
+      .item-text {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.back-btn {
+  position: absolute;
+  left: 6%;
+  top: 5%;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radiobtn-container:hover input ~ .checkmark {
+  border: 1px solid #2e69c3;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiobtn-container input:checked ~ .checkmark {
+  border: 1px solid #2e69c3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark::before {
+  content: "";
+  position: absolute;
+  display: none;
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiobtn-container input:checked ~ .checkmark:before {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobtn-container .checkmark:before {
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2e69c3;
+}
+
+.help-block {
+  font-size: 14px;
+  margin-top: 5px;
+  color: #f81e46;
+}
+
+.sticky-bottom {
+  position: -webkit-sticky;
+  position: sticky;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  border-radius: 0;
+  margin: 0;
+  background: white;
+  z-index: 10;
+  border: #e6e9ee solid 1px;
+  padding: 10px;
+}

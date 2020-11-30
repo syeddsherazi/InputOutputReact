@@ -1,0 +1,20 @@
+[
+  {
+    "title": "90's",
+    "id": "theme_90s",
+    "datePickerTitle": "Date:",
+    "messageTitle": "Message:"
+  },
+  {
+    "title": "Professional",
+    "id": "theme_Professional",
+    "datePickerTitle": "Date you selected:",
+    "messageTitle": "Here's your message:"
+  },
+  {
+    "title": "Funk",
+    "id": "theme_funk",
+    "datePickerTitle": "You picked:",
+    "messageTitle": "Your message was:"
+  }
+]
