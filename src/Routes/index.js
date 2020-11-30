@@ -4,14 +4,14 @@ import InputPage from "../Pages/Inputpage";
 import OutputPage from "../Pages/Outputpage";
 
 const Routes = () => {
-  return (
-    <>
-      <Switch>
-        <Route exact path="/" component={InputPage} />
-        <Route path="/output" component={OutputPage} />
-      </Switch>
-    </>
-  );
+    return (
+        <>
+            <Switch>
+                <Route exact path='/' component={InputPage} />
+                <Route path='/output' component={OutputPage} />
+            </Switch>
+        </>
+    );
 };
 
 export default Routes;

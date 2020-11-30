@@ -8,13 +8,13 @@ import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes/index";
 
 function App() {
-  return (
-    <AppProvider>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </AppProvider>
-  );
+    return (
+        <AppProvider>
+            <BrowserRouter>
+                <Routes />
+            </BrowserRouter>
+        </AppProvider>
+    );
 }
 
 export default App;
